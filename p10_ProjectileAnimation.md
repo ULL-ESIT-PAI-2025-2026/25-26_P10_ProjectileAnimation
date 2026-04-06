@@ -1,6 +1,6 @@
 # Práctica 10. Animaciones gráficas en TypeScript. Trayectoria de un proyectil.
-### Factor de ponderación: 9
-### Estimación de horas de trabajo para realizar la práctica: 4,5
+### Factor de ponderación: 10
+### Estimación de horas de trabajo para realizar la práctica: 5
 
 ### Objetivos
 Los objetivos de esta tarea son poner en práctica:
@@ -83,10 +83,10 @@ al realizado por un objeto cuya trayectoria describe una parábola.
 Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio que no ofrece 
 resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
 En [esta referencia](http://galia.fc.uaslp.mx/~medellin/Applets/Tiro/Tiro.htm)
-hay información adicional sobre las leyes que rigen el comportamiento del tiro parabólico.
+hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico.
 
 En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
-[https://en.wikipedia.org/wiki/Single-page_application](Single Page Application)
+[Single Page Application](https://en.wikipedia.org/wiki/Single-page_application)
 conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde un punto dado con una velocidad y ángulo
 de disparo iniciales.
 
