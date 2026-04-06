@@ -1,0 +1,4 @@
+Configure en el directorio `/public` de su práctica, la página `index.html`, 
+que servirá de "página índice" para los ejercicios de la sesión de evaluación de la práctica.
+Enlace también en esa página índice tanto la página que contiene la documentación de su proyecto, generada con
+Typedoc como otra que mostrará el diagrama UML de las clases que intervienen en su programa.

@@ -77,56 +77,79 @@ Cuando finalice su aplicación, utilice
 diseños en papel a un diagrama en formato digital que pueda mostrar a través de una web.
 
 ### Tiro parabólico
-El objetivo de esta práctica es el desarrollo de una aplicación que permita la visualización en una página web
-de la representación gráfica de una función.
+Se denomina 
+[movimiento parabólico](https://www.ck12.org/c/physics/projectile-motion-for-an-object-launched-at-an-angle/lesson/Projectile-Motion-for-an-Object-Launched-at-an-Angle-PHYS/)
+al realizado por un objeto cuya trayectoria describe una parábola. 
+Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio que no ofrece 
+resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
+En [esta referencia](http://galia.fc.uaslp.mx/~medellin/Applets/Tiro/Tiro.htm)
+hay información adicional sobre las leyes que rigen el comportamiento del tiro parabólico.
+
+En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
+[https://en.wikipedia.org/wiki/Single-page_application](Single Page Application)
+conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde un punto dado con una velocidad y ángulo
+de disparo iniciales.
 
 Intente que su aplicación imite en la medida de lo posible el aspecto de
-[esta otra](https://www.geogebra.org/m/BTC45Jzp)
-que se tomará como referencia.
-
-De esa página imite los ejes coordenados así como la numeración de los mismos y el área de dibujo de la
-función.
-En esa página de referencia pruebe a dibujar diferentes funciones usando el campo "Entrada" de la parte
-inferior.
-Pruebe a introducir funciones como *sin(x)*, *exp(x)* o *sqrt(x)* y visualice el resultado.
-
-En la aplicación que ha de desarrollar comience, a diferencia de la aplicación de referencia, haciendo que la
-función que se vaya a representar figure codificada (*cableada*, *hardcoded*) en su código fuente de modo que
-para cambiar la función que se representa habría que modificar la función principal del programa.
-Con posterioridad, intente una aproximación más elaborada, como la de la página de referencia, en la que la
-función pueda ser introducida por el usuario. 
-Para explorar esta segunda aproximación tal vez le resulte útil estudiar el analizador de expresiones
-(*Expression parser*) de librería
-[mathjs](https://mathjs.org/) 
+[esta otra](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
+omitiendo los "sliders" de la parte superior.
 
 ### Interfaz gráfica de la aplicación 
-La interfaz gráfica de la aplicación se desarrollará a través de diferentes páginas HTML.
+* La interfaz gráfica de la aplicación se desarrollará a través de diferentes páginas HTML.
 Haga que en el elemento `title` del código HTML de todas las páginas web de su poroyecto figure su nombre y apellidos.
 
-La visualización de la ejecución del programa se realizará a través de una página web alojada
+* La visualización de la ejecución del programa se realizará a través de una página web alojada
 en la máquina IaaS-ULL de la asignatura (puede utilizar si lo desea la extensión *Live View* de VSC).
-En esa página se embeberá un lienzo (canvas) para dibujar la gráfica de una función.
-La mostrará un canvas que ocupe la mayor parte del viewport de su navegador.
 
-No es necesario que invierta esfuerzo en la programación de los aspectos de esa página que no tienen relación
-con TypeScript. 
-Los estilos de CSS son aspectos que se estudiarán con mayor nivel de detalle en el futuro. 
-No se requiere que dedique esfuerzo a esos aspectos en esta práctica.
-Tampoco se propone en esta práctica que utilice elementos interactivos (botones, campos de texto, selectores,
-etc.) salvo quizás un campo de texto para leer la función que el usuario propone representar.
-
-Configure asimismo en el directorio `/public` de su práctica, la página `index.html`, 
+* Configure en el directorio `/public` de su práctica, la página `index.html`, 
 que servirá de "página índice" para los ejercicios de la sesión de evaluación de la práctica.
 Enlace también en esa página índice tanto la página que contiene la documentación de su proyecto, generada con
 Typedoc como otra que mostrará el diagrama UML de las clases que intervienen en su programa.
 
-Las siguientes deben tomarse como especificaciones adicionales de la aplicación a desarrollar:
+* La simulación se mostrará en una página que tendrá 3 partes diferenciadas:
+    * P1 el canvas principal donde se dibuja la trayectoria del proyectil,
+    * P2, un segundo canvas por debajo del anterior en el que se mostrará la información (distancia recorrida, tiempo transcurrido, etc.)
+    * P3, una tercera sección en la que figuran los botones y controles de parámetros de entrada, que en su
+      aplicación sustituyen a los "sliders" de la parte superior de la 
+      [aplicación de referncia](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
 
-## Diseño orientado a objetos
-Se deja total libertad al alumnado para diseñar la aplicación de la forma que estime más conveniente.
-Se valorará la puesta en práctica en el diseño que se realice de los contenidos relacionados con principios y
-buenas prácticas de OOP estudiados en la asignatura así como el uso de alguno de los patrones de diseño que ha
-estudiado.
+* El canvas principal (P1) será de forma rectangular y debe abarcar toda la superficie del viewport del navegador.
+
+* El canvas de P2 estará inicialmente vacío y en él se imprimirá
+información relativa al lanzamiento que se realice, una vez que el proyectil finalice su trayectoria.
+La información a reflejar es: 
+tiempo transcurrido (`t`) en segundos, 
+distancia recorrida horizontalmente (`x`) en metros y
+altura máxima alcanzada (`y max`) también en metros.
+
+* En el tercer panel (P3) el programa debe mostrar tres campos de texto en los que el usuario
+podrá introducir altura y velocidades iniciales y ángulo del lanzamiento, así como un botón `animate`, que inciará la animación.
+ 
+* También en P3 se dispondrá un *checkbox* en el que el usuario elige si se dibuja o no la trayectoria del proyectil. 
+Las trayectorias correspondientes a diferentes lanzamientos se dibujarán con diferentes colores, que se superpondrán en 
+el lienzo de P1. 
+P2 mostrará la información correspondiente al último lanzamiento y esa información debe
+borrarse con cada nuevo lanzamiento.
+
+* En el origen del lanzamiento (x=0 y=*altura inicial*), se representará el cañón que efectúa el disparo mediante una flecha (vector)
+  cuyo ángulo con el eje de abcisas coincida con el ángulo del disparo (la flecha se dibuja
+	cuando se active el botón `Lanzar` orientada en función del valor del ángulo introducido).
+
+* Para el primer proyectil lanzado, la escala de distancias (eje X) se configurará dinámicamente de
+  modo que ese primer lanzamiento "no se salga de la escala".
+
+* El diseño del HTML de esa página brinda una oportunidad para practicar diferentes elementos HTML.
+  Consiga, p. ej. que su página tenga secciones *header* y *footer*. 
+  En la cabecera coloque al menos sus apellidos y nombre. 
+  Utilice el footer para colocar información sobre la asignatura, titulación, etc.
+
+* No se pretende que se utilicen elementos CSS no estudiados en la asignatura.
+
+* Puesto que su desarrollo es una *Single Page Application* las tres secciones (P1-P3) de la página debieran
+  visualizarse correctamente sin necesidad de desplazarse (*scroll*) ni horizontal ni verticalmente.
+
+* No se requiere que dedique esfuerzo a aspectos relacionados con CSS en esta práctica.
+Los estilos de CSS son aspectos que se estudiarán con mayor nivel de detalle en el futuro. 
 
 ## Referencias
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
