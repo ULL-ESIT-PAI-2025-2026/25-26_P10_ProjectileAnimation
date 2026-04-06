@@ -57,6 +57,8 @@ que permitan la instalación de las dependencias de su proyecto.
 Incluya en el fichero `README.md` la información relevante de su proyecto de práctica y haga que ese fichero
 sea la primera página de la documentación (TypeDoc) de la práctica.
 
+Haga que en el elemento `title` del código HTML de todas las páginas web de su poroyecto figure su nombre y apellidos.
+
 En el desarrollo de esta práctica, utilice el depurador integrado en el navegador para confirmar que el flujo
 de ejecución de su programa es el correcto.
 
@@ -82,12 +84,13 @@ Se denomina
 al realizado por un objeto cuya trayectoria describe una parábola. 
 Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio que no ofrece 
 resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
-En [esta referencia](http://galia.fc.uaslp.mx/~medellin/Applets/Tiro/Tiro.htm)
+En [esta
+referencia](https://espanol.libretexts.org/Bookshelves/Fisica/Libro%3A_Fisica_(sin_limites)/3%3A_Cinem%C3%A1tica_bidimensional/3.3%3A_Movimiento_del_proyectil?readerView)
 hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico.
 
 En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
-[Single Page Application](https://en.wikipedia.org/wiki/Single-page_application)
-conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde un punto dado con una velocidad y ángulo
+([Single Page Application](https://en.wikipedia.org/wiki/Single-page_application))
+conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde una altura dada con una velocidad y ángulo
 de disparo iniciales.
 
 Intente que su aplicación imite en la medida de lo posible el aspecto de
@@ -95,14 +98,11 @@ Intente que su aplicación imite en la medida de lo posible el aspecto de
 omitiendo los "sliders" de la parte superior.
 
 ### Interfaz gráfica de la aplicación 
-* La interfaz gráfica de la aplicación se desarrollará a través de diferentes páginas HTML.
-Haga que en el elemento `title` del código HTML de todas las páginas web de su poroyecto figure su nombre y apellidos.
-
-* La visualización de la ejecución del programa se realizará a través de una página web alojada
+* La visualización de la ejecución del programa y su interfaz gráfica se desarrollará a través de una página web alojada
 en la máquina IaaS-ULL de la asignatura (puede utilizar si lo desea la extensión *Live View* de VSC).
 
 * Configure en el directorio `/public` de su práctica, la página `index.html`, 
-que servirá de "página índice" para los ejercicios de la sesión de evaluación de la práctica.
+que servirá de "página índice" tanto para su aplicación como para los ejercicios de la sesión de evaluación.
 Enlace también en esa página índice tanto la página que contiene la documentación de su proyecto, generada con
 Typedoc como otra que mostrará el diagrama UML de las clases que intervienen en su programa.
 
