@@ -1,9 +1,10 @@
-# Práctica 9. Programación Gráfica en TypeScript. La API Canvas. Representación de funciones.
+# Práctica 10. Animaciones gráficas en TypeScript. Trayectoria de un proyectil.
 ### Factor de ponderación: 9
 ### Estimación de horas de trabajo para realizar la práctica: 4,5
 
 ### Objetivos
 Los objetivos de esta tarea son poner en práctica:
+* Desarrollo de animaciones gráficas en TS/JS
 * Conceptos básicos de Programación Gráfica en TypeScript usando la API Canvas.
 * Metodologías y conceptos de diseño y Programación Orientada a Objetos en TypeScript.
 * Principios y Buenas prácticas de programación Orientada a Objetos.
@@ -15,6 +16,9 @@ que se tendrán en cuenta a la hora de evaluar esta práctica:
 * Se valorará la realización de las diferentes tareas que se proponen
 * El comportamiento del programa debe ajustarse a lo descrito en este documento
 * Capacidad de la programadora de introducir cambios en el programa desarrollado
+* La documentación de la aplicación incluirá un fichero README.md con la información correspondiente al
+  proyecto desarrollado
+* La estructura de directorios del proyecto será conforme a los requisitos establecidos en la asignatura
 * Se acredita conocimiento y puesta en práctica de principios y buenas prácticas de programación orientada a objetos
 * Saber corregir bugs en sus programas utilizando el depurador de Visual Studio Code
 * Deben usarse estructuras de datos adecuadas para representar los diferentes elementos que intervienen en el problema
@@ -36,82 +40,22 @@ y que es capaz de trabajar con la misma en Visual Studio Code
 * Todas las prácticas realizadas hasta la fecha, incluída la que se presenta para su evaluación, se encuentran alojadas en repositorios privados de GitHub.
 * Acreditar que es capaz de editar ficheros de forma remota en su VM usando Visual Studio Code
 
-### Ficheros `README.md` de los proyectos de PAI
-Cuando finalice su desarrollo modifique el fichero `README.md` de su proyecto incluyendo la información
-correspondiente a su práctica.
-
-Puede tomar el fichero `README.md` de esta práctica como referencia, pero adapte el contenido al caso particular de su práctica.
-Siéntase libre de consignar cualquier información que le parezca relevante, pero incluya siempre
-como mínimo la información que se muestra en el ejemplo.
-
-Haga que el fichero `README.md` sea la primera página de la documentación (TypeDoc) de
-la práctica.
-
-### Estructura de directorios de los proyectos de PAI
-A pesar de que no existe un criterio universal a la hora de estructurar en directorios un proyecto de
-programación web en TypeScript como los que se desarrollan en PAI, sí conviene adoptar una estructura de directorios explícita y consensuada en el ámbito de la asignatura.
-El beneficio principal es que una estructura así mejora la mantenibilidad, la colaboración y la consistencia entre proyectos.
-
-Una estructura consensuada favorece la asignación clara de responsabilidades y mejora el flujo de información.
-Agrupar de forma coherente los módulos así como usar nombres descriptivos mejora la descubribilidad, facilita refactorizaciones 
-y ayuda a que el proyecto escale sin convertirse en un repositorio caótico.
-
-Es por las razones expuestas que en las prácticas de PAI se adoptará para cada práctica la estructura de
-directorios que se presenta en este documento.
-
-#### Descripción del contenido y finalidad de cada directorio
-Se explica a continuación el contenido de cada uno de los directorios de la estructura propuesta, que es la
-que se incorpora en esta práctica.
-La estructura sigue un principio central: cada ejercicio es autónomo, pero todos comparten infraestructura común para no repetir código.
-
-Es posible que en esta estructura eche Ud. en falta algún directorio. 
-Si se da ese caso, utilice su propia lógica para incorporarlo en el punto adecuado con un nombre descriptivo.
-Debiera resultar menos probable que necesite prescindir de alguno de los directorios propuestos.
-
-Por otra parte todos los ficheros que se proporcionan con esta práctica (`*.html`, `*.json`, `*.js`, etc.) se
-ofrecen a modo de ejemplo o referencia. 
-**Debe Ud.** revisarlos y adaptarlos a sus propias necesidades en cada práctica y ejercicio.
-
-* **Raíz del proyecto**
-Los ficheros de configuración se alojan aquí: `package.json` gestiona dependencias y scripts, 
-`tsconfig.json` configura la compilación.
-También los ficheros `.gitignore`, `README.md` así como otros que pudieran resultar necesarios para futuras necesidades se ubican en este directorio.
-
-* **`/public`**
-`index.html`, 
-Punto de entrada ("índice") y navegación entre los ejercicios de la práctica.
-Ficheros de estilos (CSS) comunes a todo el proyecto se pueden alojar también en este directorio.
-
-* **`/dist`**
-Almacena los ficheros JS transpilados a partir de los fuentes TS.
-Este directorio es ignorado en `.gitignore`
-
-* **`/scripts`**
-`dev-server.js `, servidor de desarrollo simple, para desplegar su aplicación en su máquina virtual.
-Recuerde adaptar este fichero a sus necesidades específicas.
-
-* **`/src/exercises`**
-Contendrá un subdirectorio por cada ejercicio, así como otro para el ejercicio desarrollado como práctica/entrenamiento para la sesión de evaluación.
-
-* **`/src/exercises/exercise-1-hello-canvas`**
-Cada uno de los subdirectorios de `exercises` tendrá exactamente la misma estructura interna que se replicará en cada ejercicio.
-El contenido de cada subdirectorio será al menos el siguiente:página HTML dedicada, fichero principal de la aplicación, 
-módulos propios (clases) de ese ejercicio y un README.md con la descripción específica del ejercicio, si se considera necesario.
-    * `exercise-1-hello-canvas.html` - Página HTML específica del ejercicio.
-    * `exercise-1-hello-canvas.ts` - Fichero principal (punto de entrada) de la aplicación.
-    * `exercise-1-hello-canvas.css` - Estilos específicos del ejercicio, si resulta necesario.
-    * `README.md` - Información específica del ejercicio, si resulta necesario.
-
-* **`/src/exercises/home-work/doc`**
-Directorio conteniendo la documentación del ejercicio de preparación de la práctica.
+### Animaciones en TypeScript/JavaScript
+XXX
 
 ### Indicaciones de caracter general
 El programa que desarrolle ha de ser orientados a objetos.
 Ponga en práctica los principios de abstracción y encapsulamiento característicos 
 de la OOP así como las buenas prácticas, principios y patrones que han sido expuestos en las clases de la asignatura.
 
+La estructura de directorios de su proyecto de práctica debe ser conforme con la estructura establecida para
+las prácticas de PAI.
+
 Configure adecuadamente ficheros `package.json` y `tsconfig.json` en el directorio raíz de su ejercicio 
 que permitan la instalación de las dependencias de su proyecto.
+
+Incluya en el fichero `README.md` la información relevante de su proyecto de práctica y haga que ese fichero
+sea la primera página de la documentación (TypeDoc) de la práctica.
 
 En el desarrollo de esta práctica, utilice el depurador integrado en el navegador para confirmar que el flujo
 de ejecución de su programa es el correcto.
@@ -132,7 +76,7 @@ Cuando finalice su aplicación, utilice
 [Lucidchart](https://www.lucidchart.com/pages) o cualquier otra herramienta que conozca para trasladar sus
 diseños en papel a un diagrama en formato digital que pueda mostrar a través de una web.
 
-### Representación de funciones
+### Tiro parabólico
 El objetivo de esta práctica es el desarrollo de una aplicación que permita la visualización en una página web
 de la representación gráfica de una función.
 
