@@ -86,7 +86,9 @@ Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio
 resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
 En [esta
 referencia](https://espanol.libretexts.org/Bookshelves/Fisica/Libro%3A_Fisica_(sin_limites)/3%3A_Cinem%C3%A1tica_bidimensional/3.3%3A_Movimiento_del_proyectil?readerView)
-hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico.
+hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico, y en
+particular puede Ud. consultar la ecuación de la trayectoria parabólica en función de la velocidad inicial y
+el ángulo de lanzamiento.
 
 En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
 ([Single Page Application](https://en.wikipedia.org/wiki/Single-page_application))
@@ -97,67 +99,64 @@ Intente que su aplicación imite en la medida de lo posible el aspecto de
 [esta otra](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
 omitiendo los "sliders" de la parte superior.
 
-### Interfaz gráfica de la aplicación 
-* La visualización de la ejecución del programa y su interfaz gráfica se desarrollará a través de una página web alojada
+La visualización de la ejecución del programa y su interfaz gráfica se desarrollará a través de una página web alojada
 en la máquina IaaS-ULL de la asignatura (puede utilizar si lo desea la extensión *Live View* de VSC).
 
-* Configure en el directorio `/public` de su práctica, la página `index.html`, 
+Configure en el directorio `/public` de su práctica, la página `index.html`, 
 que servirá de "página índice" tanto para su aplicación como para los ejercicios de la sesión de evaluación.
 Enlace también en esa página índice tanto la página que contiene la documentación de su proyecto, generada con
 Typedoc como otra que mostrará el diagrama UML de las clases que intervienen en su programa.
 
-* La simulación se mostrará en una página que tendrá 3 partes diferenciadas:
-    * P1 el canvas principal donde se dibuja la trayectoria del proyectil,
-    * P2, un segundo canvas por debajo del anterior en el que se mostrará la información (distancia recorrida, tiempo transcurrido, etc.)
-    * P3, una tercera sección en la que figuran los botones y controles de parámetros de entrada, que en su
-      aplicación sustituyen a los "sliders" de la parte superior de la 
-      [aplicación de referncia](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
+La simulación se mostrará en una página que tendrá 3 partes diferenciadas:
+* P1 el canvas principal donde se dibuja la trayectoria del proyectil,
+* P2, un segundo canvas por debajo del anterior en el que se mostrará la información (distancia recorrida, tiempo transcurrido, etc.)
+* P3, una tercera sección en la que figuran los botones y controles de parámetros de entrada, que en su
+  aplicación sustituyen a los "sliders" de la parte superior de la 
+  [aplicación de referncia](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
 
-* El canvas principal (P1) será de forma rectangular y debe abarcar toda la superficie del viewport del navegador.
+El canvas principal (P1) será de forma rectangular y debe abarcar toda la superficie del viewport del navegador.
 
-* El canvas de P2 estará inicialmente vacío y en él se imprimirá
+El canvas de P2 estará inicialmente vacío y en él se imprimirá
 información relativa al lanzamiento que se realice, una vez que el proyectil finalice su trayectoria.
 La información a reflejar es: 
 tiempo transcurrido (`t`) en segundos, 
 distancia recorrida horizontalmente (`x`) en metros y
 altura máxima alcanzada (`y max`) también en metros.
 
-* En el tercer panel (P3) el programa debe mostrar tres campos de texto en los que el usuario
+En el tercer panel (P3) el programa debe mostrar tres campos de texto en los que el usuario
 podrá introducir altura y velocidades iniciales y ángulo del lanzamiento, así como un botón `animate`, que inciará la animación.
  
-* También en P3 se dispondrá un *checkbox* en el que el usuario elige si se dibuja o no la trayectoria del proyectil. 
+También en P3 se dispondrá un *checkbox* en el que el usuario elige si se dibuja o no la trayectoria del proyectil. 
 Las trayectorias correspondientes a diferentes lanzamientos se dibujarán con diferentes colores, que se superpondrán en 
 el lienzo de P1. 
 P2 mostrará la información correspondiente al último lanzamiento y esa información debe
 borrarse con cada nuevo lanzamiento.
 
-* En el origen del lanzamiento (x=0 y=*altura inicial*), se representará el cañón que efectúa el disparo mediante una flecha (vector)
-  cuyo ángulo con el eje de abcisas coincida con el ángulo del disparo (la flecha se dibuja
-	cuando se active el botón `Lanzar` orientada en función del valor del ángulo introducido).
+En el origen del lanzamiento (x=0 y=*altura inicial*), se representará el cañón que efectúa el disparo mediante una flecha (vector)
+cuyo ángulo con el eje de abcisas coincida con el ángulo del disparo (la flecha se dibuja
+cuando se active el botón `Lanzar` orientada en función del valor del ángulo introducido).
 
-* Para el primer proyectil lanzado, la escala de distancias (eje X) se configurará dinámicamente de
-  modo que ese primer lanzamiento "no se salga de la escala".
+Para el primer proyectil lanzado, la escala de distancias (eje X) se configurará dinámicamente de
+modo que ese primer lanzamiento "no se salga de la escala".
 
-* El diseño del HTML de esa página brinda una oportunidad para practicar diferentes elementos HTML.
-  Consiga, p. ej. que su página tenga secciones *header* y *footer*. 
-  En la cabecera coloque al menos sus apellidos y nombre. 
-  Utilice el footer para colocar información sobre la asignatura, titulación, etc.
+El diseño del HTML de esa página brinda una oportunidad para practicar diferentes elementos HTML.
+Consiga, p. ej. que su página tenga secciones *header* y *footer*. 
+En la cabecera coloque al menos sus apellidos y nombre. 
+Utilice el footer para colocar información sobre la asignatura, titulación, etc.
 
-* No se pretende que se utilicen elementos CSS no estudiados en la asignatura.
+No se pretende que se utilicen elementos CSS no estudiados en la asignatura.
 
-* Puesto que su desarrollo es una *Single Page Application* las tres secciones (P1-P3) de la página debieran
-  visualizarse correctamente sin necesidad de desplazarse (*scroll*) ni horizontal ni verticalmente.
+Puesto que su desarrollo es una *Single Page Application* las tres secciones (P1-P3) de la página debieran
+visualizarse correctamente sin necesidad de desplazarse (*scroll*) ni horizontal ni verticalmente.
 
-* No se requiere que dedique esfuerzo a aspectos relacionados con CSS en esta práctica.
+No se requiere que dedique esfuerzo a aspectos relacionados con CSS en esta práctica.
 Los estilos de CSS son aspectos que se estudiarán con mayor nivel de detalle en el futuro. 
 
 ## Referencias
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
 * [TypeDoc](https://typedoc.org/)
-* [TypeScript track in Exercism](https://exercism.org/tracks/typescript)
 * [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
 * [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-* [Jutge web site](https://jutge.org/)
 * [Jest](https://jestjs.io/)
 * [ESLint](https://eslint.org/)
 * [JSDoc](https://jsdoc.app/)
