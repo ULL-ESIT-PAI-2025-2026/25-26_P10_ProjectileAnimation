@@ -7,6 +7,9 @@
  * @author F. de Sande
  * @since March 27, 2026
  * @description Client for the CircleAnimator class
+ *              Compile the application with
+ *                tsc
+ *              tsc will use the information in tsconfig.json
  */
 
 import { ViewAnimation } from './ViewAnimation.js';

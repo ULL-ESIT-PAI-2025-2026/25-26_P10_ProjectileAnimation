@@ -74,19 +74,17 @@ export class ViewAnimation {
    */
   private animationLoop = (timestamp: number): void => {
     if (!this.isRunning) return;
-    if (this.previousTimestamp == null) this.previousTimestamp = timestamp;
-    const deltaMs = timestamp - this.previousTimestamp;
+    if (this.previousTimestamp == null) this.previousTimestamp = timestamp; // First frame
+    const deltaMs = timestamp - this.previousTimestamp;  // Time from previous frame
     this.previousTimestamp = timestamp;
-
-    // Clamp delta to avoid very large steps after tab inactivity
-    const deltaSec = Math.min(deltaMs / 1000, 0.05);
+    const deltaSec = Math.min(deltaMs / 1000, 0.05);  // Clamp delta to avoid very large steps after tab inactivity
     const rectangle = this.canvas.getBoundingClientRect();
     const width = rectangle.width;
     const height = rectangle.height;
     this.ball.update(deltaSec, width, height);
     this.clearCanvas();
     this.ball.draw(this.renderingContext);
-    this.animationFrameId = requestAnimationFrame(this.animationLoop);
+    this.animationFrameId = requestAnimationFrame(this.animationLoop);  // Next frame
   };
 
   /**

@@ -19,23 +19,33 @@ The project directory organization is as follows:
 
 ```text
 .
-├── dist (generated)
 ├── LICENSE
-├── p09_Canvas-FunctionRendering.md
+├── p10_ProjectileAnimation.md
 ├── package.json
-├── tsconfig.json
-├── README.md
 ├── public
 │   ├── index.html
 │   └── styles.css
+├── README.md
+├── scripts
+│   └── dev-server.js
 ├── src
 │   └── exercises
-│       ├── home-work
-│       │   ├── doc
-│       │   └── uml
-│       └── exercise-1-hello-canvas
-└── scripts
-    └── dev-server.js
+│       ├── bouncing-ball-animation-example
+│       │   ├── animation.html
+│       │   ├── Ball.ts
+│       │   ├── dist
+│       │   ├── main.ts
+│       │   ├── package.json
+│       │   ├── package-lock.json
+│       │   ├── README.md
+│       │   ├── styles.css
+│       │   ├── tsconfig.json
+│       │   └── ViewAnimation.ts
+│       ├── evaluation-exercise1-title
+│       └── home-work
+│           ├── doc
+│           └── uml
+└── tsconfig.json
 ```
 
 ## Building and Running the code 

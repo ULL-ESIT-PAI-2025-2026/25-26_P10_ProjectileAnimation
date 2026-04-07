@@ -41,7 +41,45 @@ y que es capaz de trabajar con la misma en Visual Studio Code
 * Acreditar que es capaz de editar ficheros de forma remota en su VM usando Visual Studio Code
 
 ### Animaciones en TypeScript/JavaScript
-XXX
+En el directorio `src/exercises/bouncing-ball-animation-example/` de esta práctica tiene disponible el código
+fuente de una aplicación web que implementa la animación de una bola que se mueve con velocidad constante en
+el marco de un canvas insertado en la página de la aplicación.
+
+Comience por leer el fichero `README.md` de la aplicación, que contiene instrucciones para compilar y
+desplegar la misma.
+
+Estudie a continuación los tres ficheros (`main.ts`, `Ball.ts` y `ViewAnimation.ts`) de código de la aplicación, con
+particular detenimiento en la clase `ViewAnimation`.
+El código de esa clase tiene comentarios que debieran permitir entender la lógica de la aplicación.
+
+
+El método `animationLoop` de esa clase es el núcleo de la animación.
+Se trata de una función flecha asignada como propiedad (no un método normal), lo que garantiza 
+que `this` siempre apunte a la instancia, aunque sea el navegador quien la invoque como callback.
+
+Ese método utiliza
+[requestAnimationFrame](https://developer.mozilla.org/es/docs/Web/API/Window/requestAnimationFrame)
+como mecanismo básico de la animación.
+
+Aportamos aquí algunas explicaciones adicionales para entender ese método:
+* Incremento (delta) de tiempo: En lugar de mover la bola un número fijo de píxeles por frame, 
+se calcula cuántos segundos reales han pasado y se usa ese valor para multiplicar la velocidad. 
+Así la animación va igual de rápida en un monitor de 60 Hz que en uno de 144 Hz. 
+`Math.min(..., 0.05)` limita el incremento a 50 ms: si el usuario cambia de pestaña y vuelve, 
+el navegador puede acumular cientos de milisegundos, lo que haría que la bola se "teletransportara"; 
+el límite (*clamp*) lo evita.
+
+* Ciclo de renderización: Primero se actualiza el estado físico (posición, rebotes), luego se borra el 
+frame anterior y finalmente se dibuja el nuevo estado. Este orden es el estándar en animación: actualizar -> limpiar -> dibujar.
+
+* Auto-programación: Al final de cada frame, `animationLoop` se vuelve a registrar como callback con `requestAnimationFrame`, 
+creando un bucle recursivo no bloqueante. 
+El navegador controla cuando ejecutarlo, respetando la frecuencia de refresco de la pantalla y pausándolo cuando la pestaña no es visible.
+
+Estudie estas referencias:
+* [JavaScript animations](https://javascript.info/js-animation)
+* [Animaciones básicas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+* [Anatomía de un videojuego](https://developer.mozilla.org/es/docs/Games/Anatomy)
 
 ### Indicaciones de caracter general
 El programa que desarrolle ha de ser orientados a objetos.
@@ -153,6 +191,9 @@ No se requiere que dedique esfuerzo a aspectos relacionados con CSS en esta prá
 Los estilos de CSS son aspectos que se estudiarán con mayor nivel de detalle en el futuro. 
 
 ## Referencias
+* [JavaScript animations](https://javascript.info/js-animation)
+* [Animaciones básicas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+* [Anatomía de un videojuego](https://developer.mozilla.org/es/docs/Games/Anatomy)
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
 * [TypeDoc](https://typedoc.org/)
 * [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
