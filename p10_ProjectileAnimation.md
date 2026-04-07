@@ -134,6 +134,7 @@ Cuando finalice su aplicación, utilice
 [Lucidchart](https://www.lucidchart.com/pages) o cualquier otra herramienta que conozca para trasladar sus
 diseños en papel a un diagrama en formato digital que pueda mostrar a través de una web.
 
+### Interfaz gráfica y especificaciones de la aplicación de tiro parabólico
 Intente que su aplicación imite en la medida de lo posible el aspecto de
 [esta otra](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
 omitiendo los "sliders" de la parte superior.
