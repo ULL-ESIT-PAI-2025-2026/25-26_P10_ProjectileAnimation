@@ -5,6 +5,7 @@
 ### Objetivos
 Los objetivos de esta tarea son poner en práctica:
 * Desarrollo de animaciones gráficas en TS/JS
+* La arquitectura Modelo-Vista-Controlador (MVC)
 * Conceptos básicos de Programación Gráfica en TypeScript usando la API Canvas.
 * Metodologías y conceptos de diseño y Programación Orientada a Objetos en TypeScript.
 * Principios y Buenas prácticas de programación Orientada a Objetos.
@@ -28,8 +29,6 @@ que se tendrán en cuenta a la hora de evaluar esta práctica:
   [TypeDoc](https://typedoc.org/)
   y de visualizar dicha documentación en un servidor web
 * El alumnado debe ser capaz de resolver problemas tanto en JS como en TS en la plataforma Exercism subiendo sus soluciones a la misma
-* Ser capaz de desarrollar tests unitarios para sus programas utilizando
-  [Jest](https://jestjs.io/)
 * Acreditar su capacidad para configurar y utilizar 
   [ESLint](https://eslint.org/)
 y que es capaz de trabajar con la misma en Visual Studio Code
@@ -81,6 +80,25 @@ Estudie estas referencias:
 * [Animaciones básicas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
 * [Anatomía de un videojuego](https://developer.mozilla.org/es/docs/Games/Anatomy)
 
+Como material para profundizar en el estudio de cómo realizar animaciones gráficas en TS/JS.
+
+### Tiro parabólico
+Se denomina 
+[movimiento parabólico](https://www.ck12.org/c/physics/projectile-motion-for-an-object-launched-at-an-angle/lesson/Projectile-Motion-for-an-Object-Launched-at-an-Angle-PHYS/)
+al realizado por un objeto cuya trayectoria describe una parábola. 
+Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio que no ofrece 
+resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
+En [esta
+referencia](https://espanol.libretexts.org/Bookshelves/Fisica/Libro%3A_Fisica_(sin_limites)/3%3A_Cinem%C3%A1tica_bidimensional/3.3%3A_Movimiento_del_proyectil?readerView)
+hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico, y en
+particular puede Ud. consultar la ecuación de la trayectoria parabólica en función de la velocidad inicial y
+el ángulo de lanzamiento.
+
+En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
+([Single Page Application](https://en.wikipedia.org/wiki/Single-page_application))
+conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde una altura dada con una velocidad y ángulo
+de disparo iniciales.
+
 ### Indicaciones de caracter general
 El programa que desarrolle ha de ser orientados a objetos.
 Ponga en práctica los principios de abstracción y encapsulamiento característicos 
@@ -115,23 +133,6 @@ Cuando finalice su aplicación, utilice
 [Mermaid.js](https://mermaid.js.org/), 
 [Lucidchart](https://www.lucidchart.com/pages) o cualquier otra herramienta que conozca para trasladar sus
 diseños en papel a un diagrama en formato digital que pueda mostrar a través de una web.
-
-### Tiro parabólico
-Se denomina 
-[movimiento parabólico](https://www.ck12.org/c/physics/projectile-motion-for-an-object-launched-at-an-angle/lesson/Projectile-Motion-for-an-Object-Launched-at-an-Angle-PHYS/)
-al realizado por un objeto cuya trayectoria describe una parábola. 
-Se corresponde con la trayectoria ideal de un proyectil que se mueve en un medio que no ofrece 
-resistencia al avance y que está sujeto a un campo gravitatorio uniforme.
-En [esta
-referencia](https://espanol.libretexts.org/Bookshelves/Fisica/Libro%3A_Fisica_(sin_limites)/3%3A_Cinem%C3%A1tica_bidimensional/3.3%3A_Movimiento_del_proyectil?readerView)
-hay información adicional sobre las leyes físicas que rigen el comportamiento del tiro parabólico, y en
-particular puede Ud. consultar la ecuación de la trayectoria parabólica en función de la velocidad inicial y
-el ángulo de lanzamiento.
-
-En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
-([Single Page Application](https://en.wikipedia.org/wiki/Single-page_application))
-conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde una altura dada con una velocidad y ángulo
-de disparo iniciales.
 
 Intente que su aplicación imite en la medida de lo posible el aspecto de
 [esta otra](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
