@@ -52,11 +52,11 @@ The project directory organization is as follows:
 
 Provide detailed instructions to build and run the code, depending on your needs and configuration
 
-## Building and Running the code y Live Demo. 
+## Building and Running the code and Live Demo. 
 
 ## Author
 
-- Alan Turing (alan.turing@ull.edu.es)
+Alan Turing (alan.turing@ull.edu.es)
 
 ## Markdown
 

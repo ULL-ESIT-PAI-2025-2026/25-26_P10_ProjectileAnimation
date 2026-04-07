@@ -75,7 +75,7 @@ frame anterior y finalmente se dibuja el nuevo estado. Este orden es el estánda
 creando un bucle recursivo no bloqueante. 
 El navegador controla cuando ejecutarlo, respetando la frecuencia de refresco de la pantalla y pausándolo cuando la pestaña no es visible.
 
-Estudie estas referencias:
+A modo de complemento, estudie estas referencias:
 * [JavaScript animations](https://javascript.info/js-animation)
 * [Animaciones básicas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
 * [Anatomía de un videojuego](https://developer.mozilla.org/es/docs/Games/Anatomy)
@@ -140,19 +140,19 @@ Intente que su aplicación imite en la medida de lo posible el aspecto de
 omitiendo los "sliders" de la parte superior.
 
 La visualización de la ejecución del programa y su interfaz gráfica se desarrollará a través de una página web alojada
-en la máquina IaaS-ULL de la asignatura (puede utilizar si lo desea la extensión *Live View* de VSC).
+en la máquina IaaS-ULL de la asignatura (puede utilizar también si lo desea la extensión *Live View* de VSC).
 
 Configure en el directorio `/public` de su práctica, la página `index.html`, 
 que servirá de "página índice" tanto para su aplicación como para los ejercicios de la sesión de evaluación.
-Enlace también en esa página índice tanto la página que contiene la documentación de su proyecto, generada con
-Typedoc como otra que mostrará el diagrama UML de las clases que intervienen en su programa.
+Enlace también en esa página tanto la página que contiene la documentación (Typedoc) de su proyecto
+como otra que mostrará el diagrama UML de las clases que intervienen en su programa.
 
 La simulación se mostrará en una página que tendrá 3 partes diferenciadas:
 * P1 el canvas principal donde se dibuja la trayectoria del proyectil,
 * P2, un segundo canvas por debajo del anterior en el que se mostrará la información (distancia recorrida, tiempo transcurrido, etc.)
 * P3, una tercera sección en la que figuran los botones y controles de parámetros de entrada, que en su
   aplicación sustituyen a los "sliders" de la parte superior de la 
-  [aplicación de referncia](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
+  [aplicación de referencia](https://demonstrations.wolfram.com/AnimatedProjectileMotion/)
 
 El canvas principal (P1) será de forma rectangular y debe abarcar toda la superficie del viewport del navegador.
 
@@ -167,6 +167,8 @@ En el tercer panel (P3) el programa debe mostrar tres campos de texto en los que
 podrá introducir altura y velocidades iniciales y ángulo del lanzamiento, así como un botón `animate`, que inciará la animación.
  
 También en P3 se dispondrá un *checkbox* en el que el usuario elige si se dibuja o no la trayectoria del proyectil. 
+Si la trayectoria no se dibuja se verá el desplazamiento del proyectil, representado por una bola de tamaño
+adecuado, siguiendo la trayectoria pero sin dibujar la misma.
 Las trayectorias correspondientes a diferentes lanzamientos se dibujarán con diferentes colores, que se superpondrán en 
 el lienzo de P1. 
 P2 mostrará la información correspondiente al último lanzamiento y esa información debe
