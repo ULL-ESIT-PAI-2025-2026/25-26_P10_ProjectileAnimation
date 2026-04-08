@@ -94,12 +94,15 @@ hay información adicional sobre las leyes físicas que rigen el comportamiento 
 particular puede Ud. consultar la ecuación de la trayectoria parabólica en función de la velocidad inicial y
 el ángulo de lanzamiento.
 
+[Esta animación](https://www.geogebra.org/m/MZRKudEF)
+de Geogebra le permitirá simular el tiro parabólico de un objeto cambiando algunos parámetros como: 
+altura del lanzamiento, velocidad inicial del objeto y ángulo de lanzamiento.
+
 En esta práctica se propone desarrollar en TypeScript una aplicación web en formato SPA 
 ([Single Page Application](https://en.wikipedia.org/wiki/Single-page_application))
 conforme al patrón MVC que simulará el lanzamiento de un proyectil disparado desde una altura dada con una velocidad y ángulo
 de disparo iniciales.
 
-### Indicaciones de caracter general
 El programa que desarrolle ha de ser orientados a objetos.
 Ponga en práctica los principios de abstracción y encapsulamiento característicos 
 de la OOP así como las buenas prácticas, principios y patrones que han sido expuestos en las clases de la asignatura.
