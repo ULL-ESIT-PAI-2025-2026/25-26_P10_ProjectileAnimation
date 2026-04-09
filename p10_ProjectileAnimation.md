@@ -2,6 +2,11 @@
 ### Factor de ponderación: 10
 ### Estimación de horas de trabajo para realizar la práctica: 5
 
+[El código de la animación está en ~/doc/clases/PAI/pruebas-PAI-jutge-REPO/animation-loop]: #
+
+[Copiar ese código al repo de la práctica si se actualiza en algún sentido]: #
+
+
 ### Objetivos
 Los objetivos de esta tarea son poner en práctica:
 * Desarrollo de animaciones gráficas en TS/JS
