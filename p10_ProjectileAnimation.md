@@ -84,6 +84,27 @@ A modo de complemento, estudie estas referencias:
 
 Como material para profundizar en el estudio de cómo realizar animaciones gráficas en TS/JS.
 
+### El patrón Modelo Vista Controlador
+El 
+[modelo-vista-controlador](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+(MVC) es un patrón de diseño arquitectónico habitualmente utilizado para el desarrollo de interfaces de usuario 
+que divide la lógica de la aplicación en tres elementos relacionados. 
+Esta división se realiza para separar la representación interna de la información (modelo) 
+de las formas en que se presenta (vista) y se acepta la información del usuario (contolador).
+Este patrón se ha utilizado tradicionalmente para interfaces gráficas de usuario (GUIs) de escritorio, 
+y se ha popularizado asimismo para el diseño de aplicaciones web.
+
+Es fácil encontrar en la web información sobre el patrón MVC, así como ejemplos de implementación del
+mismo en diferentes lenguajes.
+El 
+[trabajo expuesto en clase](https://github.com/ULL-ESIT-PAI-2024-2025/2024-2025-pai-mvc-2425-pai-mvc-team)
+sobre MVC y las referencias del mismo son un buen punto de partida como toma de contacto con el patrón MVC.
+
+Asimismo el breve artículo
+[Understanding the MVC Pattern with
+TypeScript](https://medium.com/@alessandro.traversi/understanding-the-mvc-pattern-with-typescript-an-in-depth-analysis-5a5d6f2d61a4)
+puede serles útil inicialmente.
+
 ### Tiro parabólico
 Se denomina 
 [movimiento parabólico](https://www.ck12.org/c/physics/projectile-motion-for-an-object-launched-at-an-angle/lesson/Projectile-Motion-for-an-Object-Launched-at-an-Angle-PHYS/)
