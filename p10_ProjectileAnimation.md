@@ -97,7 +97,8 @@ y se ha popularizado asimismo para el diseño de aplicaciones web.
 Es fácil encontrar en la web información sobre el patrón MVC, así como ejemplos de implementación del
 mismo en diferentes lenguajes.
 El 
-[trabajo expuesto en clase](https://github.com/ULL-ESIT-PAI-2024-2025/2024-2025-pai-mvc-2425-pai-mvc-team)
+[trabajo expuesto en
+clase](https://github.com/ULL-ESIT-PAI-2025-2026/2025-2026-pai-mvc-mvvm-adrian-enrique-manuel.git)
 sobre MVC y las referencias del mismo son un buen punto de partida como toma de contacto con el patrón MVC.
 
 Asimismo el breve artículo
