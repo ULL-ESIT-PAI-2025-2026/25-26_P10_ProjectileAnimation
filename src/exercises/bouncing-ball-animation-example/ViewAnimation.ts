@@ -19,9 +19,9 @@ export class ViewAnimation {
   private readonly renderingContext: CanvasRenderingContext2D = this.canvas.getContext('2d')!;
   private readonly backgroundColor: string;
   private readonly ball: Ball;
-  private previousTimestamp: number | null = null;
-  private animationFrameId: number | null = null;
-  private isRunning = false;
+  private previousTimestamp: number | null = null; // Holds the time of the last frame to compute the elapsed time
+  private animationFrameId: number | null = null; // Needed if you want to cancel the animation
+  private isRunning = false; // Flag to avoid starting the animation twice
 
   /**
    * @description Creates a ViewAnimation instance and appends the canvas to the document body.
@@ -29,8 +29,8 @@ export class ViewAnimation {
    */
   constructor() {
     // Initial internal bitmap size (will be adjusted by resizeCanvas)
-    this.canvas.width = 1200;
-    this.canvas.height = 600;
+    this.canvas.width = 0.9 * window.innerWidth;  // Adjust to the device width
+    this.canvas.height = 0.9 * window.innerHeight;
     this.canvas.classList.add('canvas-wrapper');
     this.backgroundColor = 'burlywood';
     const initialPosition: Point2D = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
@@ -49,7 +49,7 @@ export class ViewAnimation {
    * Also scales the rendering context so drawing coordinates are CSS pixels.
    */
   private resizeCanvas(): void {
-    const deviePixelRatio = window.devicePixelRatio || 1;
+    const deviePixelRatio = window.devicePixelRatio || 1;  // For high density screens
     const rectangle = this.canvas.getBoundingClientRect();
     const cssWidth = rectangle.width || this.canvas.width / deviePixelRatio;
     const cssHeight = rectangle.height || this.canvas.height / deviePixelRatio;
@@ -77,6 +77,7 @@ export class ViewAnimation {
     if (this.previousTimestamp == null) this.previousTimestamp = timestamp; // First frame
     const deltaMs = timestamp - this.previousTimestamp;  // Time from previous frame
     this.previousTimestamp = timestamp;
+
     const deltaSec = Math.min(deltaMs / 1000, 0.05);  // Clamp delta to avoid very large steps after tab inactivity
     const rectangle = this.canvas.getBoundingClientRect();
     const width = rectangle.width;
@@ -94,6 +95,6 @@ export class ViewAnimation {
     if (this.isRunning) return;
     this.isRunning = true;
     this.previousTimestamp = null;
-    this.animationFrameId = requestAnimationFrame(this.animationLoop);
+    this.animationFrameId = requestAnimationFrame(this.animationLoop); // Ask the browser to call animationLoop
   }
 }
